@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Morya Cars — Premium Pre-Owned Luxury Vehicles</title>
+  <meta name="description" content="India's finest pre-owned luxury car dealership. Mercedes, BMW, Audi, Porsche, Land Rover & more. Mumbai, Pune, Navi Mumbai, Nashik, Dubai." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- CDN libs loaded early with defer for guaranteed availability -->
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+
+  <!-- ═══════════════ LOADER ═══════════════ -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-brand">MORYA CARS</div>
+      <div class="loader-tagline">Premium Pre-Owned Luxury</div>
+      <div class="loader-bar-wrap">
+        <div id="loader-bar"></div>
+      </div>
+      <div id="loader-percent">0%</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header class="site-header">
+    <nav class="site-nav">
+      <a href="#" class="nav-logo">
+        <span class="logo-m">M</span><span class="logo-rest">ORYA CARS</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="https://www.moryacars.in/search" target="_blank">Browse Cars</a></li>
+        <li><a href="https://www.moryacars.in/sell-used-luxury-car" target="_blank">Sell Your Car</a></li>
+        <li><a href="https://www.moryacars.in/emi-calculator" target="_blank">EMI Calculator</a></li>
+        <li><a href="tel:+918888098877" class="nav-cta">+91 88880 98877</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ═══════════════ AD BANNER TOP ═══════════════ -->
+  <div class="ad-banner ad-top" id="adTop">
+    <div class="ad-inner">
+      <span class="ad-badge">LIMITED TIME</span>
+      <span class="ad-text">Zero processing fee on select vehicles this month &nbsp;·&nbsp; EMI starting ₹18,999/month &nbsp;·&nbsp; Free RC transfer &nbsp;·&nbsp; 6-month warranty included</span>
+      <button class="ad-close" onclick="this.closest('.ad-banner').remove()">✕</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="hero-standalone" id="hero">
+    <div class="hero-content">
+      <span class="section-label hero-label">Est. 2013 &nbsp;·&nbsp; Mumbai &nbsp;·&nbsp; Dubai</span>
+      <h1 class="hero-heading">
+        <span class="word">Drive</span>
+        <span class="word">Your</span>
+        <span class="word italic">Dream.</span>
+      </h1>
+      <p class="hero-tagline">India's most trusted pre-owned luxury dealership.<br>Curated. Certified. Delivered.</p>
+      <a href="https://www.moryacars.in/search" target="_blank" class="hero-btn">Browse Collection</a>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CANVAS ═══════════════ -->
+  <div class="canvas-wrap" id="canvasWrap">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <!-- ═══════════════ DARK OVERLAY ═══════════════ -->
+  <div id="dark-overlay"></div>
+
+  <!-- ═══════════════ MARQUEE 1 ═══════════════ -->
+  <div class="marquee-wrap" id="marquee1" data-scroll-speed="-30">
+    <div class="marquee-text">
+      MERCEDES &nbsp;·&nbsp; BMW &nbsp;·&nbsp; AUDI &nbsp;·&nbsp; PORSCHE &nbsp;·&nbsp; LAND ROVER &nbsp;·&nbsp; BENTLEY &nbsp;·&nbsp; JAGUAR &nbsp;·&nbsp; ASTON MARTIN &nbsp;·&nbsp;
+      MERCEDES &nbsp;·&nbsp; BMW &nbsp;·&nbsp; AUDI &nbsp;·&nbsp; PORSCHE &nbsp;·&nbsp; LAND ROVER &nbsp;·&nbsp; BENTLEY &nbsp;·&nbsp; JAGUAR &nbsp;·&nbsp;
+    </div>
+  </div>
+
+  <!-- ═══════════════ MARQUEE 2 ═══════════════ -->
+  <div class="marquee-wrap marquee-bottom" id="marquee2" data-scroll-speed="20">
+    <div class="marquee-text">
+      MUMBAI &nbsp;·&nbsp; PUNE &nbsp;·&nbsp; NAVI MUMBAI &nbsp;·&nbsp; THANE &nbsp;·&nbsp; NASHIK &nbsp;·&nbsp; DUBAI &nbsp;·&nbsp;
+      MUMBAI &nbsp;·&nbsp; PUNE &nbsp;·&nbsp; NAVI MUMBAI &nbsp;·&nbsp; THANE &nbsp;·&nbsp; NASHIK &nbsp;·&nbsp; DUBAI &nbsp;·&nbsp;
+    </div>
+  </div>
+
+  <!-- ═══════════════ SCROLL CONTAINER ═══════════════ -->
+  <div id="scroll-container">
+
+    <!-- SECTION 1: Heritage -->
+    <section class="scroll-section section-content align-left"
+             data-enter="8" data-leave="20" data-animation="slide-left">
+      <div class="section-inner">
+        <span class="section-label">001 / Our Story</span>
+        <h2 class="section-heading">11 Years of<br>Automotive<br>Excellence</h2>
+        <p class="section-body">Born in Mumbai, trusted across India. Morya Cars has been pairing discerning buyers with their perfect luxury vehicle since 2013 — with showrooms in Mumbai, Pune, Navi Mumbai, Thane, Nashik, and Dubai.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Brands -->
+    <section class="scroll-section section-content align-right"
+             data-enter="20" data-leave="33" data-animation="slide-right">
+      <div class="section-inner">
+        <span class="section-label">002 / Brand Portfolio</span>
+        <h2 class="section-heading">Icons Under<br>One Roof</h2>
+        <p class="section-body">Mercedes-Benz · BMW · Audi · Porsche · Land Rover · Bentley · Jaguar · Aston Martin · Volkswagen · Volvo and more — every storied marque, meticulously inspected.</p>
+        <div class="brand-pills">
+          <span>Mercedes</span><span>BMW</span><span>Audi</span><span>Porsche</span><span>Land Rover</span><span>Bentley</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Vehicle Types -->
+    <section class="scroll-section section-content align-left"
+             data-enter="33" data-leave="46" data-animation="fade-up">
+      <div class="section-inner">
+        <span class="section-label">003 / Segment</span>
+        <h2 class="section-heading">Every Body.<br>Every Style.</h2>
+        <p class="section-body">SUVs · Sedans · Coupes · Convertibles · Sports Cars · MUV/MPV · Hatchbacks. Whatever your lifestyle demands, we have the machine to match it.</p>
+        <div class="vehicle-list">
+          <div class="veh-item"><span class="veh-icon">🏎</span> Sports &amp; Coupes</div>
+          <div class="veh-item"><span class="veh-icon">🚙</span> Luxury SUVs</div>
+          <div class="veh-item"><span class="veh-icon">🚗</span> Executive Sedans</div>
+          <div class="veh-item"><span class="veh-icon">🛻</span> Convertibles</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Stats (dark overlay) -->
+    <section class="scroll-section section-stats"
+             data-enter="48" data-leave="62" data-animation="stagger-up">
+      <div class="stats-grid">
+        <div class="stat">
+          <span class="stat-number" data-value="11" data-decimals="0">0</span>
+          <span class="stat-suffix">+</span>
+          <span class="stat-label">Years in Business</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-value="5" data-decimals="0">0</span>
+          <span class="stat-suffix">Cities</span>
+          <span class="stat-label">Showrooms Across India</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-value="1000" data-decimals="0">0</span>
+          <span class="stat-suffix">+</span>
+          <span class="stat-label">Successful Deals</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-value="14" data-decimals="0">0</span>
+          <span class="stat-suffix">+</span>
+          <span class="stat-label">Luxury Brands Available</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Why Morya -->
+    <section class="scroll-section section-content align-right"
+             data-enter="64" data-leave="77" data-animation="rotate-in">
+      <div class="section-inner">
+        <span class="section-label">004 / Why Choose Us</span>
+        <h2 class="section-heading">The Morya<br>Difference</h2>
+        <ul class="benefit-list">
+          <li>✦ In-house valuation experts</li>
+          <li>✦ Competitive market pricing</li>
+          <li>✦ Flexible EMI &amp; payment plans</li>
+          <li>✦ Free RC transfer assistance</li>
+          <li>✦ After-sales support included</li>
+          <li>✦ Bank-approved financing</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Sell Your Car -->
+    <section class="scroll-section section-content align-left"
+             data-enter="78" data-leave="90" data-animation="clip-reveal">
+      <div class="section-inner">
+        <span class="section-label">005 / Sell With Us</span>
+        <h2 class="section-heading">Turn Keys<br>Into Cash.</h2>
+        <p class="section-body">Free consultation, fair valuation, quick turnaround. Our multicultural team of professionals handles everything — from evaluation to payment, seamlessly.</p>
+        <a href="https://www.moryacars.in/sell-used-luxury-car" target="_blank" class="section-btn">Get My Car Valued →</a>
+      </div>
+    </section>
+
+    <!-- SECTION 7: CTA (persists) -->
+    <section class="scroll-section section-cta align-right"
+             data-enter="91" data-leave="100" data-animation="scale-up" data-persist="true">
+      <div class="section-inner cta-inner">
+        <span class="section-label">006 / Find Your Car</span>
+        <h2 class="section-heading cta-heading">Your Perfect<br><em>Car Awaits.</em></h2>
+        <p class="section-body">Visit any of our showrooms or browse our full online inventory. Financing available. Trade-ins welcome.</p>
+        <div class="cta-buttons">
+          <a href="https://www.moryacars.in/search" target="_blank" class="cta-button cta-primary">Browse Inventory</a>
+          <a href="tel:+918888098877" class="cta-button cta-secondary">Call Now</a>
+        </div>
+        <div class="contact-row">
+          <span>BUY: +91 88880 98877</span>
+          <span>SELL: +91 88880 08877</span>
+        </div>
+        <div class="locations-row">
+          <span>Mumbai</span><span>Pune</span><span>Navi Mumbai</span><span>Thane</span><span>Nashik</span><span>Dubai</span>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /#scroll-container -->
+
+  <!-- ═══════════════ AD BANNER FLOATING ═══════════════ -->
+  <div class="ad-float" id="adFloat">
+    <button class="ad-float-close" onclick="this.closest('.ad-float').remove()">✕</button>
+    <div class="ad-float-badge">🔥 HOT DEAL</div>
+    <div class="ad-float-title">EMI from ₹18,999/mo</div>
+    <div class="ad-float-body">Zero processing fee this month on select luxury cars. Limited stock.</div>
+    <a href="https://www.moryacars.in/emi-calculator" target="_blank" class="ad-float-btn">Calculate EMI</a>
+  </div>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">MORYA CARS</div>
+        <p>India's premier pre-owned luxury car dealership. Serving buyers and sellers since 2013.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Browse By Brand</h4>
+          <a href="https://www.moryacars.in/search/mercedes%20benz" target="_blank">Mercedes-Benz</a>
+          <a href="https://www.moryacars.in/search/bmw" target="_blank">BMW</a>
+          <a href="https://www.moryacars.in/search/audi" target="_blank">Audi</a>
+          <a href="https://www.moryacars.in/search/porsche" target="_blank">Porsche</a>
+          <a href="https://www.moryacars.in/search/land%20rover" target="_blank">Land Rover</a>
+          <a href="https://www.moryacars.in/search/bentley" target="_blank">Bentley</a>
+          <a href="https://www.moryacars.in/search/jaguar" target="_blank">Jaguar</a>
+        </div>
+        <div class="footer-col">
+          <h4>Browse By Style</h4>
+          <a href="https://www.moryacars.in/search/suv" target="_blank">SUVs</a>
+          <a href="https://www.moryacars.in/search/sedan" target="_blank">Sedans</a>
+          <a href="https://www.moryacars.in/search/coupe" target="_blank">Coupes</a>
+          <a href="https://www.moryacars.in/search/convertible" target="_blank">Convertibles</a>
+          <a href="https://www.moryacars.in/search/sports" target="_blank">Sports</a>
+        </div>
+        <div class="footer-col">
+          <h4>Locations</h4>
+          <span>Andheri West, Mumbai</span>
+          <span>Powai, Mumbai</span>
+          <span>Thane (W)</span>
+          <span>Sanpada, Navi Mumbai</span>
+          <span>Baner, Pune</span>
+          <span>Nashik</span>
+          <span>Al Quoz, Dubai</span>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:+918888098877">Buy: +91 88880 98877</a>
+          <a href="tel:+918888008877">Sell: +91 88880 08877</a>
+          <a href="https://www.moryacars.in" target="_blank">www.moryacars.in</a>
+          <a href="https://www.moryacars.in/emi-calculator" target="_blank">EMI Calculator</a>
+          <a href="https://www.moryacars.in/testimonial" target="_blank">Testimonials</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Morya Cars Pvt. Ltd. All rights reserved.</span>
+      <span>
+        <a href="https://www.moryacars.in/privacy-policy" target="_blank">Privacy Policy</a> ·
+        <a href="https://www.moryacars.in/terms-of-use" target="_blank">Terms</a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>
